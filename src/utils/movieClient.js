@@ -13,7 +13,6 @@ export const getMovieByPath = (path, params = [], language = "fr") => {
   return fetch(url, { cache: "force-cache" }).then((res) => res.json());
 };
 export const getMoviesLikedByUser = async (user) => {
-  console.log("🚀 ~ getMoviesLikedByUser ~ user:", user)
   const movieLikes = user.movieLikes || [];
   const movieIds = movieLikes.map((like) => like.movieId);
 

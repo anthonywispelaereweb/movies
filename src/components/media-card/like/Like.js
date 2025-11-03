@@ -6,7 +6,6 @@ import { signIn, useSession } from "next-auth/react";
 import React from "react";
 import { useRouter } from "next/navigation";
 const Like = ({ mediaId, canRemoveItem = false }) => {
-  console.log("🚀 ~ Like ~ canRemoveItem:", canRemoveItem)
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -23,7 +22,6 @@ const Like = ({ mediaId, canRemoveItem = false }) => {
         return;
       });
     } else {
-      console.log("🚀 ~ handleLikeClicked ~ mediaId:", mediaId);
       fetch(`/api/like/${mediaId}`, {
         method: "POST",
       })

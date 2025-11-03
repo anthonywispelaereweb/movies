@@ -5,9 +5,7 @@ import Link from "next/link";
 import Like from "./like/Like";
 
 const MediaCard = ({ media, locale, priority = false, likedMovies = [] }) => {
-  console.log("🚀 ~ MediaCard ~ likedMovies:", likedMovies)
-    console.log("🚀 ~ MediaCard ~ media.id:", media.id)
-    const isLiked = !!likedMovies.find((id) => id === String(media.id))
+  const isLiked = !!likedMovies.find((id) => id === String(media.id))
   return (
     <div className={styles.card}>
       <Link href={`/${locale}/movies/${media.id}`}>

@@ -6,7 +6,6 @@ import { Suspense } from "react";
 import Like from "../media-card/like/Like";
 
 const MovieDetails = ({ movie, mediaId }) => {
-  console.log("🚀 ~ MovieDetails ~ mediaId:", mediaId)
   return (
     <div className={styles.details}>
 
