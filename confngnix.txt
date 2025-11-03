@@ -1,0 +1,24 @@
+server {
+    listen 443 ssl;
+    server_name tonio.tech;
+
+    ssl_certificate /etc/letsencrypt/live/tonio.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/tonio.tech/privkey.pem 
+;
+
+    location / {
+        proxy_pass http://localhost:3000; # Port utilisé par Next.js
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+# Redirection de HTTP vers HTTPS
+server {
+    listen 80;
+    server_name localhost;
+    return 301 https://$host$request_uri;
+}

@@ -1,0 +1,38 @@
+@import "variables";
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h2 {
+  color: $secondaryColor;
+  font-weight: bold;
+  font-size: 26px;
+  margin-top: 40px;
+}
+
+.error {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $secondaryColor;
+  font-family: var(--font-montserrat);
+
+  h1 {
+    margin: 0;
+    font-size: 100px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}

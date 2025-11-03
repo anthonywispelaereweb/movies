@@ -1,0 +1,63 @@
+@import "variables";
+
+.card {
+  font-family: var(--font-montserrat);
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  min-width: 200px;
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    img {
+      border-radius: 10px 10px 0 0;
+    }
+
+    > div {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      z-index: 5;
+      color: $secondaryColor;
+
+      &:hover {
+        color: $primaryColor;
+        transition: color 0.3s;
+      }
+    }
+  }
+
+  .content {
+    padding: 5px 10px;
+    position: relative;
+
+    .vote {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-radius: 50%;
+      top: -15px;
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+      margin: 0;
+      border: 1px solid $primaryColor;
+      background-color: $whiteColor;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 5px 0;
+      margin-top: 15px;
+    }
+
+    p {
+      font-size: 11px;
+      font-weight: 300;
+    }
+  }
+}
